@@ -1,0 +1,8 @@
+rootProject.name = "SpaceX"
+include ':app'
+include ':core'
+include ':common'
+include ':features'
+include ':features:home'
+include ':features:rockets'
+include ':features:company'
