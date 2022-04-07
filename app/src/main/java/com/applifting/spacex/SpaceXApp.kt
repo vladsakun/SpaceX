@@ -12,11 +12,11 @@ import com.applifting.spacex.di.DaggerAppComponent
 /**
  * Created by Vlad Sakun on 06.04.2022
  */
-class SpaceXApp: Application(), SpaceXAppContract {
+class SpaceXApp : SpaceXAppContract, Application() {
 
   lateinit var coreComponent: CoreComponent
 
-  companion object{
+  companion object {
 
     lateinit var appComponent: AppComponent
       private set
@@ -59,6 +59,6 @@ class SpaceXApp: Application(), SpaceXAppContract {
       .build()
   }
 
-  override fun appComponent(context: Context): CoreComponent = coreComponent(context)
+  override fun provideCoreComponent(context: Context): CoreComponent = coreComponent(context)
 
 }

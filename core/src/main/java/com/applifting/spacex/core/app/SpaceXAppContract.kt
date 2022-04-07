@@ -8,5 +8,5 @@ import com.applifting.spacex.core.di.CoreComponent
  */
 interface SpaceXAppContract {
 
-  fun appComponent(context: Context): CoreComponent?
+  fun provideCoreComponent(context: Context): CoreComponent?
 }

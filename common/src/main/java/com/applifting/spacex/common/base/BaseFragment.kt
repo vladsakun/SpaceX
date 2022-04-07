@@ -26,17 +26,13 @@ abstract class BaseFragment<B : ViewDataBinding, M : ViewModel>(
 
     @Inject
     lateinit var viewModel: M
-    lateinit var viewBinding: B
+    private var _binding: B? = null
+    val viewBinding get() = _binding!!
 
     /**
      * Called to initialize dagger injection dependency graph when fragment is attached.
      */
     abstract fun onInitDependencyInjection()
-
-    /**
-     * Called to Initialize view data binding variables when fragment view is created.
-     */
-    abstract fun onInitDataBinding()
 
     /**
      * Called to have the fragment instantiate its user interface view.
@@ -57,7 +53,7 @@ abstract class BaseFragment<B : ViewDataBinding, M : ViewModel>(
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        viewBinding = DataBindingUtil.inflate(inflater, layoutId, container, false)
+        _binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
         viewBinding.lifecycleOwner = viewLifecycleOwner
         return viewBinding.root
     }
@@ -72,19 +68,6 @@ abstract class BaseFragment<B : ViewDataBinding, M : ViewModel>(
     override fun onAttach(context: Context) {
         super.onAttach(context)
         onInitDependencyInjection()
-    }
-
-    /**
-     * Called to have the fragment instantiate its user interface view.
-     *
-     * @param view The view returned by onCreateView(LayoutInflater, ViewGroup, Bundle)}.
-     * @param savedInstanceState If non-null, this fragment is being re-constructed
-     * from a previous saved state as given here.
-     * @see Fragment.onViewCreated
-     */
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        onInitDataBinding()
     }
 
     /**
@@ -104,5 +87,10 @@ abstract class BaseFragment<B : ViewDataBinding, M : ViewModel>(
         } else {
             throw TypeCastException("Main activity should extend from 'AppCompatActivity'")
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

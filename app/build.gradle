@@ -31,14 +31,17 @@ android {
     jvmTarget = '1.8'
   }
   buildFeatures {
-    viewBinding true
+    dataBinding true
   }
 }
 
 dependencies {
-
   implementation project(path: ':core')
   implementation project(path: ':common')
+
+  implementation project(':features:company')
+  implementation project(':features:home')
+  implementation project(':features:rockets')
 
   implementation 'androidx.core:core-ktx:1.7.0'
   implementation 'androidx.appcompat:appcompat:1.4.1'

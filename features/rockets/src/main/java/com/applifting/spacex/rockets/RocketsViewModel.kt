@@ -1,10 +1,10 @@
-package com.applifting.spacex.ui.company
+package com.applifting.spacex.rockets
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import com.applifting.spacex.common.base.BaseViewModel
 
-class CompanyDetailsViewModel : ViewModel() {
+class RocketsViewModel : BaseViewModel() {
 
   private val _text = MutableLiveData<String>().apply {
     value = "This is gallery Fragment"
