@@ -1,5 +1,6 @@
 package com.applifting.spacex.common.base
 
+import android.os.Bundle
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.applifting.spacex.common.connection.NetworkConnectionSubscriber
@@ -35,5 +36,8 @@ abstract class BaseViewModel : ViewModel(), NetworkConnectionSubscriber {
    * Override to add a custom behavior
    */
   open fun onStart() {
+  }
+
+  open fun onCreate(arguments: Bundle?) {
   }
 }

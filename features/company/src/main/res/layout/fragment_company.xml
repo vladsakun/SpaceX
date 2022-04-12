@@ -1,26 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout
+  xmlns:tools="http://schemas.android.com/tools">
 
   <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/clRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
 
-    <TextView
-      android:id="@+id/text_gallery"
+    <ScrollView
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="8dp"
-      android:layout_marginTop="8dp"
-      android:layout_marginEnd="8dp"
-      android:textAlignment="center"
-      android:textSize="20sp"
+      android:layout_height="0dp"
+      android:fillViewport="true"
+      android:isScrollContainer="true"
+      android:overScrollMode="never"
       app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      />
+      >
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMainContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+          android:id="@+id/ivLogo"
+          android:layout_width="200dp"
+          android:layout_height="200dp"
+          android:layout_marginTop="50dp"
+          android:src="@drawable/ic_spacex_logo"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          />
+
+        <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/tvCompanyName"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="24dp"
+          android:gravity="center"
+          android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+          app:layout_constraintTop_toBottomOf="@+id/ivLogo"
+          tools:text="SpaceX"
+          />
+
+        <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/tvCompanyFounder"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginHorizontal="24dp"
+          android:layout_marginTop="24dp"
+          android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+          app:layout_constraintTop_toBottomOf="@+id/tvCompanyName"
+          tools:text="Founder: "
+          />
+
+        <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/tvCompanyEmployees"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginHorizontal="24dp"
+          android:layout_marginTop="24dp"
+          android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+          app:layout_constraintTop_toBottomOf="@+id/tvCompanyFounder"
+          tools:text="Employees: "
+          />
+
+        <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/tvCompanySummary"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginHorizontal="24dp"
+          android:layout_marginTop="24dp"
+          android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+          app:layout_constraintTop_toBottomOf="@+id/tvCompanyEmployees"
+          tools:text="Summary: "
+          />
+      </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
   </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

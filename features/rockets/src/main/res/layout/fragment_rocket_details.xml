@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  >
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/clRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <androidx.viewpager2.widget.ViewPager2
+      android:id="@+id/vpRocketImages"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      app:layout_constraintBottom_toTopOf="@+id/guideline50"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:background="@color/black"
+      />
+
+    <androidx.appcompat.widget.AppCompatImageView
+      android:id="@+id/ivArrowBack"
+      android:layout_width="60dp"
+      android:layout_height="60dp"
+      android:layout_marginStart="12dp"
+      app:layout_constraintBottom_toBottomOf="@+id/vpRocketImages"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/vpRocketImages"
+      app:srcCompat="@drawable/ic_arrow_circle_left"
+      />
+
+    <androidx.appcompat.widget.AppCompatImageView
+      android:id="@+id/ivArrowNext"
+      android:layout_width="60dp"
+      android:layout_height="60dp"
+      android:layout_marginEnd="12dp"
+      app:layout_constraintBottom_toBottomOf="@+id/vpRocketImages"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/vpRocketImages"
+      app:srcCompat="@drawable/ic_arrow_circle_right"
+      />
+
+    <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/guideline50"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:orientation="horizontal"
+      app:layout_constraintGuide_percent="0.5"
+      />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/tvRocketName"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginHorizontal="24dp"
+      android:layout_marginTop="24dp"
+      android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+      app:layout_constraintTop_toBottomOf="@+id/vpRocketImages"
+      tools:text="Rocket name: Falcon"
+      />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/tvRocketCostPerLaunch"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginHorizontal="24dp"
+      android:layout_marginTop="24dp"
+      android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+      app:layout_constraintTop_toBottomOf="@+id/tvRocketName"
+      tools:text="Cost per launch: 5000 $"
+      />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/tvRocketHeight"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginHorizontal="24dp"
+      android:layout_marginTop="24dp"
+      android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+      app:layout_constraintTop_toBottomOf="@+id/tvRocketCostPerLaunch"
+      tools:text="Height: 200m"
+      />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/tvRocketWikipedia"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginHorizontal="24dp"
+      android:layout_marginTop="24dp"
+      android:autoLink="web"
+      android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+      app:layout_constraintTop_toBottomOf="@+id/tvRocketHeight"
+      tools:text="Wikipedia link: test.com"
+      />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

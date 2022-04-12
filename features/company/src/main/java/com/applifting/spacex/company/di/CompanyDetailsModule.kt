@@ -3,7 +3,9 @@ package com.applifting.spacex.company.di
 import com.applifting.spacex.common.extensions.viewModel
 import com.applifting.spacex.company.CompanyDetailsFragment
 import com.applifting.spacex.company.CompanyDetailsViewModel
+import com.applifting.spacex.core.database.company.repository.CompanyRepositoryContract
 import com.applifting.spacex.core.di.scopes.FeatureScope
+import com.applifting.spacex.core.network.repositories.SpaceXRepositoryContract
 import dagger.Module
 import dagger.Provides
 
@@ -17,9 +19,12 @@ class CompanyDetailsModule(
 
   @Provides
   @FeatureScope
-  fun provideCompanyDetailsViewModel(): CompanyDetailsViewModel {
+  fun provideCompanyDetailsViewModel(
+    spaceXRepository: SpaceXRepositoryContract,
+    companyRepository: CompanyRepositoryContract
+  ): CompanyDetailsViewModel {
     return fragment.viewModel {
-      CompanyDetailsViewModel()
+      CompanyDetailsViewModel(spaceXRepository, companyRepository)
     }
   }
 }

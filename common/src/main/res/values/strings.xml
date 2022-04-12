@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">SpaceX</string>
+  <string name="navigation_drawer_open">Open navigation drawer</string>
+  <string name="navigation_drawer_close">Close navigation drawer</string>
+  <string name="nav_header_title">SpaceX App</string>
+  <string name="nav_header_subtitle">Vlad Sakun</string>
+  <string name="nav_header_desc">Navigation header</string>
+  <string name="action_settings">Settings</string>
+
+  <string name="menu_home">Home</string>
+  <string name="menu_company">Company</string>
+  <string name="menu_rockets">Rockets</string>
+  <string name="title_home">Home</string>
+  <string name="title_rockets">Rockets</string>
+  <string name="title_company">Company</string>
+
+  <string name="nav_open">Open</string>
+  <string name="nav_close">Close</string>
+
+  <!--Company screen-->
+  <string name="company_founder">Founder: %s</string>
+  <string name="company_employees">Employees: %s</string>
+  <string name="company_summary">Summary: %s</string>
+  <!--Company screen-->
+
+  <!--Rockets screen-->
+  <string name="rocket_name">Name: %s</string>
+  <string name="rocket_cost_per_launch">Cost per launch: %s $</string>
+  <string name="search_by_name_type">Search by name, cost per launch</string>
+  <!--Rockets screen-->
+
+  <!--Rocket Details screen-->
+  <string name="rocket_details_name">Rocket name: %s</string>
+  <string name="rocket_details_cost_per_launch">Cost per launch: %s $</string>
+  <string name="rocket_details_height">Height: %sm</string>
+  <string name="rocket_details_wikipedia_link">Wikipedia link: %s</string>
+  <!--Rocket Details screen-->
+
+</resources>

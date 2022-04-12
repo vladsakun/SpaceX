@@ -14,5 +14,9 @@ data class CompanyEntity(
   @ColumnInfo(name = "name")
   val name: String,
   @ColumnInfo(name = "founder")
-  val founder: String
+  val founder: String,
+  @ColumnInfo(name = "summary")
+  val summary: String,
+  @ColumnInfo(name = "employees")
+  val employees: Double
 )

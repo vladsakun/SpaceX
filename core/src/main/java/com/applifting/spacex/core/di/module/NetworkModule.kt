@@ -1,8 +1,14 @@
 package com.applifting.spacex.core.di.module
 
-import com.applifting.spacex.core.BuildConfig
+import com.applifting.spacex.core.database.company.CompanyMapper
+import com.applifting.spacex.core.database.company.repository.CompanyRepositoryContract
+import com.applifting.spacex.core.database.rocket.RocketMapper
+import com.applifting.spacex.core.database.rocket.image.RocketImageMapper
+import com.applifting.spacex.core.database.rocket.repository.RocketRepositoryContract
 import com.applifting.spacex.core.network.repositories.SpaceXRepository
+import com.applifting.spacex.core.network.repositories.SpaceXRepositoryContract
 import com.applifting.spacex.core.network.services.SpaceXService
+import com.applifting.spacex.core.utils.Constants
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -25,7 +31,7 @@ class NetworkModule {
   @Provides
   fun provideRetrofitBuilder(): Retrofit =
     Retrofit.Builder()
-      .baseUrl(BuildConfig.BASE_URL)
+      .baseUrl(Constants.BASE_URL)
       .addConverterFactory(GsonConverterFactory.create())
       .build()
 
@@ -45,5 +51,19 @@ class NetworkModule {
    */
   @Singleton
   @Provides
-  fun provideSpaceXRepository(service: SpaceXService): SpaceXRepository = SpaceXRepository(service)
+  fun provideSpaceXRepository(
+    service: SpaceXService,
+    rocketMapper: RocketMapper,
+    rocketImageMapper: RocketImageMapper,
+    companyMapper: CompanyMapper,
+    rocketRepository: RocketRepositoryContract,
+    companyRepository: CompanyRepositoryContract
+  ): SpaceXRepositoryContract = SpaceXRepository(
+    service = service,
+    rocketMapper = rocketMapper,
+    rocketImageMapper = rocketImageMapper,
+    companyMapper = companyMapper,
+    rocketRepository = rocketRepository,
+    companyRepository = companyRepository
+  )
 }

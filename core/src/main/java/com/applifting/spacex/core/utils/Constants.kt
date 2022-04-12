@@ -5,4 +5,5 @@ package com.applifting.spacex.core.utils
  */
 object Constants {
   const val DATABASE_NAME = "spaceX"
+  const val BASE_URL = "https://api.spacexdata.com"
 }
