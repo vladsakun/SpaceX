@@ -2,6 +2,7 @@ package com.applifting.spacex.common.extensions
 
 import android.view.View
 import android.widget.ImageView
+import com.applifting.spacex.common.R
 import com.applifting.spacex.common.listeners.OnSingleClickListener
 import com.bumptech.glide.Glide
 
@@ -21,7 +22,10 @@ fun View.hide() {
 }
 
 fun ImageView.loadImage(url: String?) {
-  Glide.with(this.context).load(url).into(this)
+  Glide.with(this.context)
+    .load(url)
+    .error(R.drawable.ic_rocket)
+    .into(this)
 }
 
 fun View.setOnSingleClickListener(action: () -> Unit) {

@@ -32,6 +32,10 @@ class RocketsViewModel(
 
   private fun getRockets() {
     rocketRepository.observeAllRocketsWithImages().onEach {
+      if (it.isEmpty()) {
+        _state.setValueSuspend(RocketsViewState.ShowLoader)
+      }
+
       if (it != cachedRockets) {
         _state.setValueSuspend(RocketsViewState.SetRocketsData(it))
       }
@@ -42,6 +46,7 @@ class RocketsViewModel(
     if (isNetworkConnected?.value == true) {
       viewModelScope.launch(Dispatchers.IO) {
         spaceXRepository.fetchRockets()
+        _state.setValueSuspend(RocketsViewState.HideLoader)
       }
     }
   }
