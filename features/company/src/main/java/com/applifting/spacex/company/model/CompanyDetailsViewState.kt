@@ -6,4 +6,8 @@ package com.applifting.spacex.company.model
 sealed class CompanyDetailsViewState {
 
   class SetupUI(val uiModel: CompanyDetailsUIModel) : CompanyDetailsViewState()
+
+  object ShowLoader : CompanyDetailsViewState()
+
+  object HideLoader : CompanyDetailsViewState()
 }

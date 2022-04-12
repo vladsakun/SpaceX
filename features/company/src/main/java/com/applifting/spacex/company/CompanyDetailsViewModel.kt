@@ -24,6 +24,7 @@ class CompanyDetailsViewModel(
 
   fun onViewCreated() {
     companyRepository.observeCompany().onEach { company ->
+
       company?.run {
         _state.setValueSuspend(
           CompanyDetailsViewState.SetupUI(
@@ -35,12 +36,14 @@ class CompanyDetailsViewModel(
             )
           )
         )
-      }
+      } ?: _state.setValueSuspend(CompanyDetailsViewState.ShowLoader)
+
     }.launchIn(viewModelScope)
 
     if (isNetworkConnected?.value == true) {
       viewModelScope.launch(Dispatchers.IO) {
         spaceXRepository.fetchCompany()
+        _state.setValueSuspend(CompanyDetailsViewState.HideLoader)
       }
     }
   }

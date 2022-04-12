@@ -3,7 +3,9 @@ package com.applifting.spacex.company
 import android.os.Bundle
 import android.view.View
 import com.applifting.spacex.common.base.BaseFragment
+import com.applifting.spacex.common.extensions.hide
 import com.applifting.spacex.common.extensions.observe
+import com.applifting.spacex.common.extensions.show
 import com.applifting.spacex.company.databinding.FragmentCompanyBinding
 import com.applifting.spacex.company.di.CompanyDetailsModule
 import com.applifting.spacex.company.di.DaggerCompanyDetailsComponent
@@ -27,6 +29,10 @@ class CompanyDetailsFragment : BaseFragment<FragmentCompanyBinding, CompanyDetai
   private fun onStateChange(state: CompanyDetailsViewState) {
     when (state) {
       is CompanyDetailsViewState.SetupUI -> setupUI(state.uiModel)
+
+      is CompanyDetailsViewState.HideLoader -> viewBinding.progressCircular.hide()
+
+      is CompanyDetailsViewState.ShowLoader -> viewBinding.progressCircular.show()
     }
   }
 

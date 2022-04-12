@@ -5,10 +5,13 @@
       <map>
         <entry key="..\:/Programming/Android_Projects/SpaceX/app/src/main/res/layout/activity_main.xml" value="0.23645833333333333" />
         <entry key="..\:/Programming/Android_Projects/SpaceX/app/src/main/res/layout/nav_header_main.xml" value="0.23645833333333333" />
+        <entry key="..\:/Programming/Android_Projects/SpaceX/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1785" />
         <entry key="..\:/Programming/Android_Projects/SpaceX/common/src/main/res/drawable/ic_rocket.xml" value="0.1785" />
+        <entry key="..\:/Programming/Android_Projects/SpaceX/features/company/src/main/res/layout/fragment_company.xml" value="0.23645833333333333" />
         <entry key="..\:/Programming/Android_Projects/SpaceX/features/rockets/src/main/res/drawable/ic_arrow_circle_left.xml" value="0.1785" />
         <entry key="..\:/Programming/Android_Projects/SpaceX/features/rockets/src/main/res/drawable/ic_arrow_circle_right.xml" value="0.1785" />
         <entry key="..\:/Programming/Android_Projects/SpaceX/features/rockets/src/main/res/layout/fragment_rocket_details.xml" value="0.23645833333333333" />
+        <entry key="..\:/Programming/Android_Projects/SpaceX/features/rockets/src/main/res/layout/fragment_rockets.xml" value="0.23645833333333333" />
       </map>
     </option>
   </component>
