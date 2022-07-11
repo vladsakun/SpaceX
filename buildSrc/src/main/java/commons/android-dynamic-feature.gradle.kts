@@ -43,7 +43,4 @@ dependencies {
     implementation("com.google.dagger:dagger:2.38.1")
     implementation("com.google.dagger:dagger-android-support:2.38.1")
     kapt("com.google.dagger:dagger-compiler:2.38.1")
-
-    // Swipe refresh layout
-    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
 }

@@ -2,16 +2,6 @@ plugins {
     `kotlin-dsl`
 }
 
-gradlePlugin {
-    plugins {
-        create("BuildManager") {
-            id = "com.applifting.spacex"
-            implementationClass = "BuildManager"
-            version = "1.0.0"
-        }
-    }
-}
-
 repositories {
     mavenCentral()
     google()
